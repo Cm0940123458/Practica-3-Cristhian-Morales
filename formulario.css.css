@@ -1,0 +1,93 @@
+#contacto {
+    background-color: var(--color-fondo);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background-color: var(--color-principal);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+    transition: color 0.3s ease;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #333;
+    background-color: #222;
+    color: var(--color-claro);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Red border and background for fields with errors */
+.form-group.has-error input,
+.form-group.has-error textarea {
+    border-color: var(--color-terciario);
+    background-color: #3d1a24;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 10px var(--color-secundario);
+}
+
+.form-group.has-error label {
+    color: var(--color-terciario);
+}
+
+/* Error message styling */
+.error-message {
+    color: var(--color-terciario);
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show error message when there's an error */
+.form-group.has-error .error-message {
+    opacity: 1;
+}
+
+form button {
+    background: linear-gradient(45deg, var(--color-secundario), var(--color-terciario));
+    color: var(--color-claro);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--color-secundario);
+}

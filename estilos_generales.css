@@ -1,0 +1,227 @@
+/* Estilos Globales para un diseño futurista y minimalista */
+:root {
+    --color-principal: #1a1a2e; /* Azul oscuro casi negro */
+    --color-secundario: #00bcd4; /* Cian brillante */
+    --color-terciario: #e94560; /* Rosa/rojo para acentos */
+    --color-claro: #f4f4f4;
+    --color-fondo: #0f0f1b; /* Fondo aún más oscuro */
+    --fuente-principal: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-claro);
+}
+
+header {
+    background: var(--color-principal);
+    color: var(--color-claro);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-secundario);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li a {
+    color: var(--color-claro);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 6rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#presentacion {
+    background-color: var(--color-principal);
+    color: var(--color-claro);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#presentacion h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+#presentacion p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+    opacity: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--color-secundario), var(--color-terciario));
+    color: var(--color-claro);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--color-secundario);
+}
+
+/* Sección Misión-Visión (Nosotros) */
+#mision-vision {
+    background-color: var(--color-fondo);
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio para que el contenido de side-info se estire */
+    text-align: left;
+}
+
+.nosotros-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* ESTE ES EL CAMBIO CLAVE: Hace que los hijos (side-info y mision-vision-content) ocupen la misma altura */
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.side-info {
+    flex-basis: 35%;
+    display: flex; /* Convierte side-info en un contenedor flex */
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    background-color: var(--color-principal); /* Le damos un fondo para que coincida con las tarjetas */
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--color-secundario);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.side-info h2, .side-info p {
+    margin: 0; /* Elimina márgenes por defecto para mejor centrado */
+}
+
+.mision-vision-content {
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#mision-vision article {
+    background-color: var(--color-principal);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--color-secundario);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mision-vision article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+footer {
+    background: var(--color-principal);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--color-secundario);
+}
+
+footer .social-links a {
+    color: var(--color-secundario);
+    margin: 0 0.8rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--color-terciario);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Diseño Responsivo Básico */
+@media (max-width: 768px) {
+    .nosotros-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .side-info {
+        flex-basis: 100%;
+        text-align: center;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 2rem;
+        /* Remover background y box-shadow si no se desean en móvil para side-info */
+        background-color: transparent; 
+        box-shadow: none;
+    }
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    header nav ul {
+        margin-top: 1rem;
+    }
+}
